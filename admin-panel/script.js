@@ -83,6 +83,20 @@ async function setLive(id) {
     loadTournaments();
 }
 
+async function addRoom(id) {
+    const roomId = document.getElementById("roomId").value;
+    const password = document.getElementById("roomPass").value;
+    await fetch(`https://game-backend-l3uq.onrender.com/api/tournaments/${id}/room`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + token
+        },
+        body: JSON.stringify({ roomId, password })
+    });
+    alert("Room details added")
+}
+
 async function declareWinner(tournamentId, winnerId) {
 
     await fetch(`https://game-backend-l3uq.onrender.com/api/tournaments/${tournamentId}/declare-winner`, {
