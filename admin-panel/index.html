@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+</head>
+<body>
+
+<h2>Admin Dashboard</h2>
+
+<button onclick="logout()">Logout</button>
+
+<hr>
+
+<h3>Create Tournament</h3>
+<input id="title" placeholder="Title"><br><br>
+<input id="entryFee" placeholder="Entry Fee"><br><br>
+<input id="prize" placeholder="Prize"><br><br>
+<input id="slots" placeholder="Total Slots"><br><br>
+<button onclick="createTournament()">Create</button>
+
+<hr>
+
+<h3>All Tournaments</h3>
+<div id="tournamentList"></div>
+
+<hr>
+<h3>Pending Deposits</h3>
+<div id="depositList"></div>
+
+<hr>
+<h3>Pending Withdraws</h3>
+<div id="withdrawList"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
