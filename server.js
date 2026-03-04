@@ -38,6 +38,9 @@ app.use((req, res, next) => {
 app.get("/", (req, res) => {
     res.send("Tournament API Running");
 });
+const path = require("path");
+
+app.use("/admin-panel", express.static(path.join(__dirname, "admin-panel")));
 
 const authRoutes = require("./routes/authRoutes");
 const tournamentRoutes = require("./routes/tournamentRoutes");
