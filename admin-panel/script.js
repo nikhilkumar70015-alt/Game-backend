@@ -15,7 +15,7 @@ async function createTournament() {
     const prize = document.getElementById("prize").value;
     const totalSlots = document.getElementById("slots").value;
 
-    await fetch("http://game-backend-l3uq.onrender.com/api/tournaments/create", {
+    await fetch("https://game-backend-l3uq.onrender.com/api/tournaments/create", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -33,7 +33,7 @@ async function createTournament() {
 }
 
 async function loadTournaments() {
-    const res = await fetch("http://game-backend-l3uq.onrender.com/api/tournaments");
+    const res = await fetch("https://game-backend-l3uq.onrender.com/api/tournaments");
     const tournaments = await res.json();
 
     const container = document.getElementById("tournamentList");
@@ -71,7 +71,7 @@ async function loadTournaments() {
 }
 
 async function setLive(id) {
-    await fetch(`http://game-backend-l3uq.onrender.com/api/tournaments/${id}/status`, {
+    await fetch(`https://game-backend-l3uq.onrender.com/api/tournaments/${id}/status`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -85,7 +85,7 @@ async function setLive(id) {
 
 async function declareWinner(tournamentId, winnerId) {
 
-    await fetch(`http://game-backend-l3uq.onrender.com/api/tournaments/${tournamentId}/declare-winner`, {
+    await fetch(`https://game-backend-l3uq.onrender.com/api/tournaments/${tournamentId}/declare-winner`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -98,7 +98,7 @@ async function declareWinner(tournamentId, winnerId) {
 }
 
 async function loadDeposits() {
-    const res = await fetch("http://game-backend-l3uq.onrender.com/api/tournaments/deposits", {
+    const res = await fetch("https://game-backend-l3uq.onrender.com/api/tournaments/deposits", {
         headers: {
             "Authorization": "Bearer " + token
         }
@@ -128,7 +128,7 @@ async function loadDeposits() {
 }
 
 async function approveDeposit(id) {
-    await fetch(`http://game-backend-l3uq.onrender.com/api/tournaments/deposit/${id}/approve`, {
+    await fetch(`https://game-backend-l3uq.onrender.com/api/tournaments/deposit/${id}/approve`, {
         method: "PUT",
         headers: {
             "Authorization": "Bearer " + token
@@ -139,7 +139,7 @@ async function approveDeposit(id) {
 }
 
 async function rejectDeposit(id) {
-    await fetch(`http://game-backend-l3uq.onrender.com/api/tournaments/deposit/${id}/reject`, {
+    await fetch(`https://game-backend-l3uq.onrender.com/api/tournaments/deposit/${id}/reject`, {
         method: "PUT",
         headers: {
             "Authorization": "Bearer " + token
@@ -150,7 +150,7 @@ async function rejectDeposit(id) {
 }
 
 async function loadWithdraws() {
-    const res = await fetch("http://game-backend-l3uq.onrender.com/api/tournaments/withdraws", {
+    const res = await fetch("https://game-backend-l3uq.onrender.com/api/tournaments/withdraws", {
         headers: {
             "Authorization": "Bearer " + token
         }
@@ -179,7 +179,7 @@ async function loadWithdraws() {
 }
 
 async function approveWithdraw(id) {
-    await fetch(`http://game-backend-l3uq.onrender.com/api/tournaments/withdraw/${id}/approve`, {
+    await fetch(`https://game-backend-l3uq.onrender.com/api/tournaments/withdraw/${id}/approve`, {
         method: "PUT",
         headers: {
             "Authorization": "Bearer " + token
@@ -190,7 +190,7 @@ async function approveWithdraw(id) {
 }
 
 async function rejectWithdraw(id) {
-    await fetch(`http://game-backend-l3uq.onrender.com/api/tournaments/withdraw/${id}/reject`, {
+    await fetch(`https://game-backend-l3uq.onrender.com/api/tournaments/withdraw/${id}/reject`, {
         method: "PUT",
         headers: {
             "Authorization": "Bearer " + token
