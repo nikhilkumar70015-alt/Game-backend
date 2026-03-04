@@ -22,7 +22,7 @@
 
       const data = await res.json();
 
-      if (data.token && data.user.role === "admin") {
+      if (data.token && data.user.isAdmin) {
         localStorage.setItem("adminToken", data.token);
         window.location.href = "index.html";
       } else {
